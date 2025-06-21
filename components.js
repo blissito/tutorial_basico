@@ -97,6 +97,11 @@ document.addEventListener("allComponentsLoaded", () => {
   // Por ejemplo, inicializar animaciones, eventos, etc.
   initializeAnimations();
   initializeEventListeners();
+
+  // Inicializar calculadora de ROI
+  if (typeof inicializarCalculadoraROI === "function") {
+    inicializarCalculadoraROI();
+  }
 });
 
 // Función para inicializar animaciones
