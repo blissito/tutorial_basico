@@ -1,21 +1,18 @@
-FROM oven/bun:1-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy package files
+# Copia los archivos de dependencias
 COPY package*.json ./
 
-# Copy bun.lockb if it exists (optional)
-COPY bun.lockb* ./
+# Instala dependencias
+RUN npm install
 
-# Install dependencies (will create bun.lockb if it doesn't exist)
-RUN bun install
-
-# Copy static files
+# Copia el resto del código
 COPY . .
 
-# Expose port
+# Expone el puerto
 EXPOSE 8080
 
-# Start Bun server
-CMD ["bun", "run", "start"] 
+# Comando para iniciar el servidor
+CMD ["node", "server.js"] 

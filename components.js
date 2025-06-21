@@ -50,6 +50,7 @@ class ComponentLoader {
     const components = [
       { name: "header", containerId: "header-container" },
       { name: "features", containerId: "features-container" },
+      { name: "comparison", containerId: "comparison-container" },
       { name: "why-phi", containerId: "why-phi-container" },
       { name: "roi-calculator", containerId: "roi-calculator-container" },
       { name: "testimonials", containerId: "testimonials-container" },

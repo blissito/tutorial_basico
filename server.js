@@ -1,4 +1,4 @@
-import { serve } from "bun";
+import http from "http";
 import { readFile } from "fs/promises";
 import { join, extname } from "path";
 
@@ -40,35 +40,36 @@ const getMimeType = (filePath) => {
   return mimeTypes[ext] || "text/plain";
 };
 
-const server = serve({
-  port,
-  fetch: async (req) => {
-    const url = new URL(req.url);
-    const filePath = getFilePath(url.pathname);
+const server = http.createServer(async (req, res) => {
+  const url = new URL(req.url, `http://${req.headers.host}`);
+  const filePath = getFilePath(url.pathname);
 
-    try {
-      const file = await readFile(filePath);
-      const mimeType = getMimeType(filePath);
-
-      return new Response(file, {
-        headers: {
-          "Content-Type": mimeType,
-          "Cache-Control": "public, max-age=3600", // Cache for 1 hour
-        },
-      });
-    } catch (error) {
-      // If file not found, return 404
-      if (error.code === "ENOENT") {
-        console.error(`File not found: ${filePath}`);
-        return new Response("Not Found", { status: 404 });
-      }
-
-      // For other errors, return 500
-      console.error("Server error:", error);
-      return new Response("Internal Server Error", { status: 500 });
+  try {
+    const file = await readFile(filePath);
+    const mimeType = getMimeType(filePath);
+    res.writeHead(200, {
+      "Content-Type": mimeType,
+      "Cache-Control": "public, max-age=3600", // Cache for 1 hour
+    });
+    res.end(file);
+  } catch (error) {
+    // If file not found, return 404
+    if (error.code === "ENOENT") {
+      console.error(`File not found: ${filePath}`);
+      res.writeHead(404, { "Content-Type": "text/plain" });
+      res.end("Not Found");
     }
-  },
+
+    // For other errors, return 500
+    console.error("Server error:", error);
+    res.writeHead(500, { "Content-Type": "text/plain" });
+    res.end("Internal Server Error");
+  }
 });
 
-console.log(`🚀 Phi-4 server running on http://localhost:${port}`);
-console.log(`📁 Components available at http://localhost:${port}/components/`);
+server.listen(port, () => {
+  console.log(`🚀 Phi-4 server running on http://localhost:${port}`);
+  console.log(
+    `📁 Components available at http://localhost:${port}/components/`
+  );
+});
