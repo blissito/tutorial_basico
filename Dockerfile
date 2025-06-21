@@ -1,12 +1,12 @@
-FROM node:20-alpine
+FROM oven/bun:1
 
 WORKDIR /app
 
 # Copia los archivos de dependencias
 COPY package*.json ./
 
-# Instala dependencias
-RUN npm install
+# Instala dependencias con bun
+RUN bun install
 
 # Copia el resto del código
 COPY . .
@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 8080
 
 # Comando para iniciar el servidor
-CMD ["node", "server.js"] 
+CMD ["bun", "run", "start"] 

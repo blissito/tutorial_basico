@@ -53,11 +53,18 @@ const server = http.createServer(async (req, res) => {
     });
     res.end(file);
   } catch (error) {
+    // Check if headers have already been sent
+    if (res.headersSent) {
+      console.error("Headers already sent, cannot send error response");
+      return;
+    }
+
     // If file not found, return 404
     if (error.code === "ENOENT") {
       console.error(`File not found: ${filePath}`);
       res.writeHead(404, { "Content-Type": "text/plain" });
       res.end("Not Found");
+      return;
     }
 
     // For other errors, return 500

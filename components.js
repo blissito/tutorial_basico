@@ -106,7 +106,28 @@ document.addEventListener("allComponentsLoaded", () => {
 
 // Función para inicializar animaciones
 function initializeAnimations() {
-  // Animaciones de entrada para los componentes
+  // Detectar si es dispositivo móvil
+  const isMobile =
+    window.innerWidth <= 768 ||
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+  // No ejecutar animaciones en móviles para mejor rendimiento
+  if (isMobile) {
+    console.log(
+      "📱 Dispositivo móvil detectado - saltando animaciones de scroll"
+    );
+    // Asegurar que todos los contenedores sean visibles en móvil
+    document.querySelectorAll('[id$="-container"]').forEach((container) => {
+      container.style.opacity = "1";
+      container.style.transform = "translateY(0)";
+      container.style.transition = "none";
+    });
+    return;
+  }
+
+  // Animaciones de entrada para los componentes (solo en desktop)
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
@@ -132,7 +153,14 @@ function initializeAnimations() {
 
 // Función para inicializar event listeners
 function initializeEventListeners() {
-  // Event listeners para botones CTA
+  // Detectar si es dispositivo móvil
+  const isMobile =
+    window.innerWidth <= 768 ||
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+  // Event listeners para botones CTA (funciona en todos los dispositivos)
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("cta-button")) {
       console.log("🎯 Botón CTA clickeado:", e.target.textContent);
@@ -140,20 +168,24 @@ function initializeEventListeners() {
     }
   });
 
-  // Event listeners para hover effects
-  document.addEventListener("mouseover", (e) => {
-    if (e.target.closest(".shadow-neo")) {
-      e.target.closest(".shadow-neo").classList.add("hover:shadow-neo-hover");
-    }
-  });
+  // Event listeners para hover effects (solo en desktop)
+  if (!isMobile) {
+    document.addEventListener("mouseover", (e) => {
+      if (e.target.closest(".shadow-neo")) {
+        e.target.closest(".shadow-neo").classList.add("hover:shadow-neo-hover");
+      }
+    });
 
-  document.addEventListener("mouseout", (e) => {
-    if (e.target.closest(".shadow-neo")) {
-      e.target
-        .closest(".shadow-neo")
-        .classList.remove("hover:shadow-neo-hover");
-    }
-  });
+    document.addEventListener("mouseout", (e) => {
+      if (e.target.closest(".shadow-neo")) {
+        e.target
+          .closest(".shadow-neo")
+          .classList.remove("hover:shadow-neo-hover");
+      }
+    });
+  } else {
+    console.log("📱 Dispositivo móvil detectado - saltando efectos hover");
+  }
 }
 
 // Exportar para uso global
