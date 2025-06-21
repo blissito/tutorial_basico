@@ -25,6 +25,12 @@ const mimeTypes = {
 // Default to index.html for root path
 const getFilePath = (url) => {
   if (url === "/") return "./index.html";
+
+  // Handle components directory
+  if (url.startsWith("/components/")) {
+    return "." + url;
+  }
+
   return "." + url;
 };
 
@@ -53,6 +59,7 @@ const server = serve({
     } catch (error) {
       // If file not found, return 404
       if (error.code === "ENOENT") {
+        console.error(`File not found: ${filePath}`);
         return new Response("Not Found", { status: 404 });
       }
 
@@ -64,3 +71,4 @@ const server = serve({
 });
 
 console.log(`🚀 Phi-4 server running on http://localhost:${port}`);
+console.log(`📁 Components available at http://localhost:${port}/components/`);

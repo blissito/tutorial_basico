@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phi-4 - Fixter.org</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Poppins:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "fixter-primary": "#1a1a1a",
+              "fixter-secondary": "#4a4a4a",
+              "fixter-accent": "#007acc",
+              "fixter-light": "#f8f9fa",
+              "fixter-dark": "#2d3748",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              display: ["Poppins", "system-ui", "sans-serif"],
+            },
+            boxShadow: {
+              neo: "8px 8px 0px #1a1a1a",
+              "neo-hover": "12px 12px 0px #1a1a1a",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .cta-button:active {
+        background: #4a4a4a;
+        transition: all 0.1s ease;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-fixter-light text-fixter-primary min-h-screen flex items-center justify-center p-4"
+  >
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Header -->
+      <div class="mb-12">
+        <div class="mb-6">
+          <!-- Logo Fixter.org -->
+          <div class="flex items-center justify-center mb-3">
+            <a
+              href="https://fixter.org"
+              target="_blank"
+              class="hover:opacity-80 transition-opacity duration-300"
+            >
+              <img
+                src="https://fixter.org/logo.png"
+                alt="Fixter.org"
+                class="h-12 md:h-14"
+              />
+            </a>
+          </div>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-fixter-primary to-fixter-accent mx-auto rounded-full"
+          ></div>
+        </div>
+        <h1
+          class="text-5xl md:text-7xl lg:text-8xl font-black mb-4 bg-gradient-to-r from-fixter-primary via-fixter-secondary to-fixter-accent bg-clip-text text-transparent"
+        >
+          PHI-4
+        </h1>
+        <p
+          class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 text-fixter-primary"
+        >
+          El LLM que revoluciona la inteligencia artificial
+        </p>
+        <p
+          class="text-base md:text-lg font-semibold text-fixter-accent mb-6 italic"
+        >
+          "La velocidad y la inteligencia se encuentran con la eficiencia y el
+          ahorro"
+        </p>
+
+        <!-- Valor empresarial -->
+        <div class="mb-12 max-w-3xl lg:max-w-4xl mx-auto">
+          <p
+            class="text-base md:text-lg lg:text-xl text-fixter-primary mb-4 leading-relaxed"
+          >
+            Transforma tu empresa con IA <strong>potente y accesible</strong>.
+            Phi-4 elimina la barrera de costos tradicionales de los LLMs
+            empresariales, permitiéndote implementar inteligencia artificial sin
+            inversiones millonarias en infraestructura. Ahora, por primera vez,
+            el resto de nosotros tenemos acceso a tecnología de vanguardia que
+            antes solo estaba disponible para las grandes corporaciones.
+          </p>
+
+          <!-- Primer CTA -->
+          <div class="mb-6">
+            <div
+              class="bg-white border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 inline-block rounded-lg"
+            >
+              <button
+                class="cta-button bg-[#85ddcb] text-black px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-black hover:bg-[#6bc4b2] transition-all duration-300 rounded"
+              >
+                DESCUBRE MÁS
+              </button>
+            </div>
+          </div>
+
+          <p
+            class="text-base md:text-lg lg:text-xl text-fixter-primary leading-relaxed"
+          >
+            Desde automatización de atención al cliente hasta análisis
+            predictivo de datos, Phi-4 te ofrece capacidades de nivel
+            empresarial a una fracción del costo. Reduce gastos operativos hasta
+            en un 40% mientras mejoras la eficiencia y la toma de decisiones
+            basada en datos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Características principales -->
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <!-- Característica 1 -->
+        <div
+          class="bg-white border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 p-6 lg:p-8 rounded-lg"
+        >
+          <div class="text-4xl lg:text-5xl mb-3">🚀</div>
+          <h3 class="text-lg lg:text-xl font-black mb-3 text-fixter-primary">
+            VELOCIDAD EXTREMA
+          </h3>
+          <p class="text-sm lg:text-base text-fixter-primary font-semibold">
+            Procesamiento 10x más rápido con latencia inferior a 100ms. Ideal
+            para aplicaciones en tiempo real como chatbots y generación de
+            contenido en vivo.
+          </p>
+        </div>
+
+        <!-- Característica 2 -->
+        <div
+          class="bg-white border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 p-6 lg:p-8 rounded-lg"
+        >
+          <div class="text-4xl lg:text-5xl mb-3">🧠</div>
+          <h3 class="text-lg lg:text-xl font-black mb-3 text-fixter-primary">
+            INTELIGENCIA SUPERIOR
+          </h3>
+          <p class="text-sm lg:text-base text-fixter-primary font-semibold">
+            14B parámetros optimizados para razonamiento complejo, programación
+            y matemáticas. Entrenado con datos de alta calidad para una
+            comprensión contextual superior.
+          </p>
+        </div>
+
+        <!-- Característica 3 -->
+        <div
+          class="bg-white border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 p-6 lg:p-8 rounded-lg"
+        >
+          <div class="text-4xl lg:text-5xl mb-3">⚡</div>
+          <h3 class="text-lg lg:text-xl font-black mb-3 text-fixter-primary">
+            EFICIENCIA MÁXIMA
+          </h3>
+          <p class="text-sm lg:text-base text-fixter-primary font-semibold">
+            60% de reducción en consumo energético. Funciona en hardware
+            estándar sin GPUs especializadas, reduciendo costos operativos y la
+            huella de carbono.
+          </p>
+        </div>
+
+        <!-- Característica 4 - Técnica más importante -->
+        <div
+          class="bg-gradient-to-br from-fixter-primary to-fixter-accent border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 p-6 lg:p-8 rounded-lg"
+        >
+          <div class="text-4xl lg:text-5xl mb-3">🔬</div>
+          <h3 class="text-lg lg:text-xl font-black mb-3 text-white">
+            ARQUITECTURA REVOLUCIONARIA
+          </h3>
+          <p class="text-sm lg:text-base text-white font-semibold">
+            Arquitectura Transformer-XL con atención causal y memoria de largo
+            alcance. Capacidad de procesar secuencias de hasta 32K tokens con
+            precisión matemática superior al 95%.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div
+        class="bg-white border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 inline-block rounded-lg"
+      >
+        <button
+          class="cta-button bg-[#85ddcb] text-black px-8 lg:px-12 py-4 lg:py-6 text-lg lg:text-2xl font-black hover:bg-[#6bc4b2] transition-all duration-300 rounded"
+        >
+          PRUEBA PHI AHORA
+        </button>
+      </div>
+
+      <!-- Nueva sección: Por qué emplear Phi-4 -->
+      <div class="mt-16 max-w-4xl mx-auto">
+        <h2
+          class="text-2xl md:text-3xl lg:text-4xl font-black mb-8 text-fixter-primary"
+        >
+          ¿Por qué Phi-4 es la elección inteligente?
+        </h2>
+        <div
+          class="bg-white border-4 border-fixter-primary shadow-neo p-8 lg:p-10 rounded-lg"
+        >
+          <p
+            class="text-base md:text-lg lg:text-xl text-fixter-primary leading-relaxed mb-6"
+          >
+            Implementar Phi-4 en tu empresa no es solo una decisión tecnológica,
+            es
+            <span
+              class="bg-[#85ddcb] text-black px-2 py-1 rounded font-semibold"
+              >una demostración de inteligencia empresarial</span
+            >. Mientras otros gastan fortunas en soluciones de IA que requieren
+            equipos de expertos y hardware especializado, tú obtienes
+            capacidades superiores a una fracción del costo.
+          </p>
+          <p
+            class="text-base md:text-lg lg:text-xl text-fixter-primary leading-relaxed mb-6"
+          >
+            Con Phi-4, consigues
+            <span
+              class="bg-[#85ddcb] text-black px-2 py-1 rounded font-semibold"
+              >automatización inteligente que aprende y mejora con el
+              tiempo</span
+            >, análisis de datos que revelan insights ocultos, y
+            <span
+              class="bg-[#85ddcb] text-black px-2 py-1 rounded font-semibold"
+              >una ventaja competitiva que tus competidores tardarán años en
+              alcanzar</span
+            >. Es como tener un equipo de genios trabajando 24/7, pero sin los
+            egos ni las demandas de aumento de sueldo.
+          </p>
+          <p
+            class="text-base md:text-lg lg:text-xl text-fixter-primary leading-relaxed"
+          >
+            <span
+              class="bg-[#85ddcb] text-black px-2 py-1 rounded font-semibold"
+              >Mientras la IA se vuelve más inteligente, tú te vuelves más
+              inteligente al usarla.</span
+            >
+            Es la única vez que puedes decir honestamente que "la máquina me
+            está haciendo más inteligente" sin sonar como si estuvieras en una
+            película de ciencia ficción 🤖. Phi-4 no solo resuelve problemas, te
+            ayuda a descubrir problemas que ni siquiera sabías que tenías.
+            <br /><span
+              class="bg-[#85ddcb] text-black px-3 py-2 rounded-lg font-bold text-lg"
+              >¡Eso sí que es inteligencia artificial!</span
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="mt-12 text-fixter-secondary">
+        <p class="text-base lg:text-lg font-semibold">
+          Desarrollado por Fixter.org
+        </p>
+        <p class="text-xs lg:text-sm">
+          © 2024 Phi-4. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

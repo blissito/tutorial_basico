@@ -3,7 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phi-4 - Fixter.org</title>
+    <title>Monta Microsoft Phi-4 en un contenedor</title>
+
+    <!-- Meta Tags SEO -->
+    <meta
+      name="description"
+      content="Transforma tu empresa con IA potente y accesible. Microsoft Phi-4 elimina la barrera de costos tradicionales de los LLMs empresariales, permitiéndote implementar inteligencia artificial sin inversiones millonarias en infraestructura. Ahora, por primera vez, el resto de nosotros tenemos acceso a tecnología de vanguardia que antes solo estaba disponible para las grandes corporaciones."
+    />
+    <meta
+      name="keywords"
+      content="Microsoft Phi-4, IA, inteligencia artificial, LLM, contenedor, Docker, empresa, transformación digital, costo efectivo"
+    />
+    <meta name="author" content="Fixter.org" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fixter.org/" />
+    <meta
+      property="og:title"
+      content="Monta Microsoft Phi-4 en un contenedor"
+    />
+    <meta
+      property="og:description"
+      content="Transforma tu empresa con IA potente y accesible. Microsoft Phi-4 elimina la barrera de costos tradicionales de los LLMs empresariales, permitiéndote implementar inteligencia artificial sin inversiones millonarias en infraestructura."
+    />
+    <meta property="og:image" content="https://fixter.org/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Microsoft Phi-4 - Transforma tu empresa con IA potente y accesible"
+    />
+    <meta property="og:site_name" content="Fixter.org" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://fixter.org/" />
+    <meta
+      name="twitter:title"
+      content="Monta Microsoft Phi-4 en un contenedor"
+    />
+    <meta
+      name="twitter:description"
+      content="Transforma tu empresa con IA potente y accesible. Microsoft Phi-4 elimina la barrera de costos tradicionales de los LLMs empresariales."
+    />
+    <meta name="twitter:image" content="https://fixter.org/logo.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Microsoft Phi-4 - Transforma tu empresa con IA potente y accesible"
+    />
+    <meta name="twitter:site" content="@fixterorg" />
+    <meta name="twitter:creator" content="@fixterorg" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Poppins:wght@700;900&display=swap"
@@ -35,235 +111,383 @@
     <style>
       body {
         font-family: "Inter", sans-serif;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      /* AI Pattern Background */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='ai-pattern' x='0' y='0' width='200' height='200' patternUnits='userSpaceOnUse'%3E%3Crect width='200' height='200' fill='%23f8f9fa'/%3E%3C!-- Circuit lines --%3E%3Cpath d='M20 40 L80 40 L80 80 L140 80' stroke='%23e2e8f0' stroke-width='2' fill='none'/%3E%3Cpath d='M60 20 L60 60 L120 60 L120 100' stroke='%23e2e8f0' stroke-width='2' fill='none'/%3E%3Cpath d='M100 40 L160 40 L160 120 L180 120' stroke='%23e2e8f0' stroke-width='2' fill='none'/%3E%3C!-- Neural network nodes --%3E%3Ccircle cx='40' cy='40' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='80' cy='40' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='80' cy='80' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='140' cy='80' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='60' cy='20' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='60' cy='60' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='120' cy='60' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='120' cy='100' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='100' cy='40' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='160' cy='40' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='160' cy='120' r='3' fill='%23cbd5e0'/%3E%3Ccircle cx='180' cy='120' r='3' fill='%23cbd5e0'/%3E%3C!-- Data points --%3E%3Crect x='30' y='120' width='4' height='4' fill='%23a0aec0'/%3E%3Crect x='50' y='140' width='4' height='4' fill='%23a0aec0'/%3E%3Crect x='70' y='130' width='4' height='4' fill='%23a0aec0'/%3E%3Crect x='90' y='150' width='4' height='4' fill='%23a0aec0'/%3E%3Crect x='110' y='125' width='4' height='4' fill='%23a0aec0'/%3E%3Crect x='130' y='145' width='4' height='4' fill='%23a0aec0'/%3E%3Crect x='150' y='135' width='4' height='4' fill='%23a0aec0'/%3E%3Crect x='170' y='155' width='4' height='4' fill='%23a0aec0'/%3E%3C!-- Geometric shapes representing AI --%3E%3Cpolygon points='10,160 20,150 30,160 20,170' fill='%23e2e8f0'/%3E%3Cpolygon points='170,10 180,20 170,30 160,20' fill='%23e2e8f0'/%3E%3Cpolygon points='10,10 20,20 10,30 0,20' fill='%23e2e8f0'/%3E%3Cpolygon points='190,160 200,170 190,180 180,170' fill='%23e2e8f0'/%3E%3C!-- Binary code representation --%3E%3Ctext x='15' y='185' font-family='monospace' font-size='8' fill='%23cbd5e0'%3E1010%3C/text%3E%3Ctext x='155' y='185' font-family='monospace' font-size='8' fill='%23cbd5e0'%3E0101%3C/text%3E%3Ctext x='15' y='15' font-family='monospace' font-size='8' fill='%23cbd5e0'%3E1100%3C/text%3E%3Ctext x='155' y='15' font-family='monospace' font-size='8' fill='%23cbd5e0'%3E0011%3C/text%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23ai-pattern)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 200px 200px;
+        opacity: 0.3;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* Ensure content is above the pattern */
+      main {
+        position: relative;
+        z-index: 1;
       }
 
       .cta-button:active {
         background: #4a4a4a;
         transition: all 0.1s ease;
       }
+
+      /* Special hover for price button */
+      .price-button {
+        background: linear-gradient(
+          135deg,
+          #6bc4b2 0%,
+          #85ddcb 50%,
+          #6bc4b2 100%
+        );
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease infinite;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .price-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .price-button:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(26, 26, 26, 0.3),
+          0 8px 8px rgba(26, 26, 26, 0.2);
+        background-position: 100% 100%;
+      }
+
+      .price-button:hover::before {
+        left: 100%;
+      }
+
+      .price-button:active {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 8px 16px rgba(26, 26, 26, 0.3);
+      }
+
+      @keyframes gradient-shift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Special hover for white price button */
+      .price-button-white {
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f8f9fa 50%,
+          #ffffff 100%
+        );
+        background-size: 200% 200%;
+        animation: gradient-shift-white 3s ease infinite;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        border: 4px solid #1a1a1a;
+      }
+
+      .price-button-white::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(26, 26, 26, 0.1),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .price-button-white:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(26, 26, 26, 0.3),
+          0 8px 8px rgba(26, 26, 26, 0.2);
+        background-position: 100% 100%;
+      }
+
+      .price-button-white:hover::before {
+        left: 100%;
+      }
+
+      .price-button-white:active {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 8px 16px rgba(26, 26, 26, 0.3);
+      }
+
+      @keyframes gradient-shift-white {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Loading spinner */
+      .loading-spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #1a1a1a;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Fade in animation for components */
+      .component-fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .component-fade-in.loaded {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Unified hover animations */
+      .hover-lift {
+        transition: all 0.3s ease;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 12px 12px 0px #1a1a1a;
+      }
+
+      .hover-scale {
+        transition: all 0.3s ease;
+      }
+
+      .hover-scale:hover {
+        transform: scale(1.05);
+      }
+
+      .hover-scale-large {
+        transition: all 0.3s ease;
+      }
+
+      .hover-scale-large:hover {
+        transform: scale(1.1);
+      }
+
+      .hover-color {
+        transition: all 0.3s ease;
+      }
+
+      .hover-color:hover {
+        background-color: #6bc4b2 !important;
+      }
+
+      .hover-text {
+        transition: all 0.3s ease;
+      }
+
+      .hover-text:hover {
+        color: #1a1a1a !important;
+      }
+
+      .hover-opacity {
+        transition: opacity 0.3s ease;
+      }
+
+      .hover-opacity:hover {
+        opacity: 0.8;
+      }
+
+      .hover-border {
+        transition: all 0.3s ease;
+      }
+
+      .hover-border:hover {
+        border-color: #1a1a1a !important;
+      }
+
+      /* Unified button styles */
+      .btn-primary {
+        @apply bg-[#85ddcb] text-black px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-black rounded inline-block focus:outline-none focus:ring-4 focus:ring-fixter-primary focus:ring-opacity-50;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #6bc4b2;
+        transform: translateY(-2px);
+        box-shadow: 8px 8px 0px #1a1a1a;
+      }
+
+      .btn-secondary {
+        @apply bg-white text-fixter-primary px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-black border-4 border-fixter-primary rounded inline-block focus:outline-none focus:ring-4 focus:ring-fixter-primary focus:ring-opacity-50;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background-color: #f8f9fa;
+        transform: translateY(-2px);
+        box-shadow: 8px 8px 0px #1a1a1a;
+      }
+
+      .btn-outline {
+        @apply border-4 border-white text-white px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-black rounded inline-block focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline:hover {
+        background-color: white;
+        color: #1a1a1a;
+        transform: translateY(-2px);
+        box-shadow: 8px 8px 0px #1a1a1a;
+      }
+
+      /* Card hover effects */
+      .card-hover {
+        @apply bg-white border-4 border-fixter-primary shadow-neo rounded-lg;
+        transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 12px 12px 0px #1a1a1a;
+      }
+
+      /* Link hover effects */
+      .link-hover {
+        transition: all 0.3s ease;
+      }
+
+      .link-hover:hover {
+        color: #1a1a1a;
+        transform: scale(1.05);
+      }
     </style>
   </head>
-  <body
-    class="bg-fixter-light text-fixter-primary min-h-screen flex items-center justify-center p-4"
-  >
-    <div class="max-w-4xl mx-auto text-center">
-      <!-- Header -->
-      <div class="mb-12">
-        <div class="mb-6">
-          <!-- Logo Fixter.org -->
-          <div class="flex items-center justify-center mb-3">
-            <a
-              href="https://fixter.org"
-              target="_blank"
-              class="hover:opacity-80 transition-opacity duration-300"
-            >
-              <img
-                src="https://fixter.org/logo.png"
-                alt="Fixter.org"
-                class="h-12 md:h-14"
-              />
-            </a>
-          </div>
-          <div
-            class="w-24 h-1 bg-gradient-to-r from-fixter-primary to-fixter-accent mx-auto rounded-full"
-          ></div>
+  <body>
+    <main
+      class="bg-fixter-light text-fixter-primary min-h-screen flex items-center justify-center p-4"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <!-- Loading indicator -->
+        <div id="loading-indicator" class="mb-8">
+          <div class="loading-spinner"></div>
+          <p class="text-fixter-primary font-semibold">Cargando Phi-4...</p>
         </div>
-        <h1
-          class="text-5xl md:text-7xl lg:text-8xl font-black mb-4 bg-gradient-to-r from-fixter-primary via-fixter-secondary to-fixter-accent bg-clip-text text-transparent"
-        >
-          PHI-4
-        </h1>
-        <p
-          class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 text-fixter-primary"
-        >
-          El LLM que revoluciona la inteligencia artificial
-        </p>
-        <p
-          class="text-base md:text-lg font-semibold text-fixter-accent mb-6 italic"
-        >
-          "Ve donde la velocidad y la inteligencia se encuentran con la
-          eficiencia y el ahorro"
-        </p>
 
-        <!-- Valor empresarial -->
-        <div class="mb-12 max-w-3xl lg:max-w-4xl mx-auto">
-          <p
-            class="text-base md:text-lg lg:text-xl text-fixter-primary mb-4 leading-relaxed"
-          >
-            Transforma tu empresa con IA <strong>potente y accesible</strong>.
-            Phi-4 elimina la barrera de costos tradicionales de los LLMs
-            empresariales, permitiéndote implementar inteligencia artificial sin
-            inversiones millonarias en infraestructura. Ahora, por primera vez,
-            el resto de nosotros tenemos acceso a tecnología de vanguardia que
-            antes solo estaba disponible para las grandes corporaciones.
-          </p>
+        <!-- Header Component -->
+        <div id="header-container" class="component-fade-in"></div>
 
-          <!-- Primer CTA -->
-          <div class="mb-6">
-            <div
-              class="bg-white border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 inline-block rounded-lg"
-            >
-              <button
-                class="cta-button bg-[#85ddcb] text-black px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-black hover:bg-[#6bc4b2] transition-all duration-300 rounded"
-              >
-                DESCUBRE MÁS
-              </button>
-            </div>
-          </div>
+        <!-- Features Component -->
+        <div id="features-container" class="component-fade-in"></div>
 
-          <p
-            class="text-base md:text-lg lg:text-xl text-fixter-primary leading-relaxed"
-          >
-            Desde automatización de atención al cliente hasta análisis
-            predictivo de datos, Phi-4 te ofrece capacidades de nivel
-            empresarial a una fracción del costo. Reduce gastos operativos hasta
-            en un 40% mientras mejoras la eficiencia y la toma de decisiones
-            basada en datos.
-          </p>
-        </div>
+        <!-- Why Phi Component -->
+        <div id="why-phi-container" class="component-fade-in"></div>
+
+        <!-- ROI Calculator Component -->
+        <div id="roi-calculator-container" class="component-fade-in"></div>
+
+        <!-- Testimonials Component -->
+        <div id="testimonials-container" class="component-fade-in"></div>
+
+        <!-- Garantía -->
+        <div id="guarantee-container" class="component-fade-in"></div>
+
+        <!-- FAQ -->
+        <div id="faq-container" class="component-fade-in"></div>
+
+        <!-- CTA -->
+        <div id="cta-container" class="component-fade-in"></div>
       </div>
 
-      <!-- Características principales -->
-      <div class="grid md:grid-cols-2 gap-6 mb-12">
-        <!-- Característica 1 -->
-        <div
-          class="bg-white border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 p-6 lg:p-8 rounded-lg"
-        >
-          <div class="text-4xl lg:text-5xl mb-3">🚀</div>
-          <h3 class="text-lg lg:text-xl font-black mb-3 text-fixter-primary">
-            VELOCIDAD EXTREMA
-          </h3>
-          <p class="text-sm lg:text-base text-fixter-primary font-semibold">
-            Procesamiento 10x más rápido con latencia inferior a 100ms. Ideal
-            para aplicaciones en tiempo real como chatbots y generación de
-            contenido en vivo.
-          </p>
-        </div>
+      <!-- Scripts -->
+      <script src="components.js"></script>
+      <script src="main.js"></script>
 
-        <!-- Característica 2 -->
-        <div
-          class="bg-white border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 p-6 lg:p-8 rounded-lg"
-        >
-          <div class="text-4xl lg:text-5xl mb-3">🧠</div>
-          <h3 class="text-lg lg:text-xl font-black mb-3 text-fixter-primary">
-            INTELIGENCIA SUPERIOR
-          </h3>
-          <p class="text-sm lg:text-base text-fixter-primary font-semibold">
-            14B parámetros optimizados para razonamiento complejo, programación
-            y matemáticas. Entrenado con datos de alta calidad para una
-            comprensión contextual superior.
-          </p>
-        </div>
+      <script>
+        // Ocultar loading indicator cuando todos los componentes estén cargados
+        document.addEventListener("allComponentsLoaded", () => {
+          const loadingIndicator = document.getElementById("loading-indicator");
+          if (loadingIndicator) {
+            loadingIndicator.style.display = "none";
+          }
 
-        <!-- Característica 3 -->
-        <div
-          class="bg-white border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 p-6 lg:p-8 rounded-lg"
-        >
-          <div class="text-4xl lg:text-5xl mb-3">⚡</div>
-          <h3 class="text-lg lg:text-xl font-black mb-3 text-fixter-primary">
-            EFICIENCIA MÁXIMA
-          </h3>
-          <p class="text-sm lg:text-base text-fixter-primary font-semibold">
-            60% de reducción en consumo energético. Funciona en hardware
-            estándar sin GPUs especializadas, reduciendo costos operativos y la
-            huella de carbono.
-          </p>
-        </div>
+          // Agregar clase 'loaded' a todos los contenedores para animación
+          document
+            .querySelectorAll(".component-fade-in")
+            .forEach((container) => {
+              container.classList.add("loaded");
+            });
+        });
 
-        <!-- Característica 4 - Técnica más importante -->
-        <div
-          class="bg-[#85ddcb] hover:bg-[#6bc4b2] border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 p-6 lg:p-8 rounded-lg"
-        >
-          <div class="text-4xl lg:text-5xl mb-3">🔬</div>
-          <h3 class="text-lg lg:text-xl font-black mb-3 text-black">
-            ARQUITECTURA REVOLUCIONARIA
-          </h3>
-          <p class="text-sm lg:text-base text-black font-semibold">
-            Arquitectura Transformer-XL con atención causal y memoria de largo
-            alcance. Capacidad de procesar secuencias de hasta 32K tokens con
-            precisión matemática superior al 95%.
-          </p>
-        </div>
-      </div>
+        // Manejar errores de carga de componentes
+        document.addEventListener("componentLoaded", (e) => {
+          console.log(`✅ Componente cargado: ${e.detail.componentName}`);
+        });
 
-      <!-- CTA -->
-      <div
-        class="bg-white border-4 border-fixter-primary shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:-translate-y-2 inline-block rounded-lg"
-      >
-        <button
-          class="cta-button bg-[#85ddcb] text-black px-8 lg:px-12 py-4 lg:py-6 text-lg lg:text-2xl font-black hover:bg-[#6bc4b2] transition-all duration-300 rounded"
-        >
-          PRUEBA PHI AHORA
-        </button>
-      </div>
-
-      <!-- Nueva sección: Por qué emplear Phi-4 -->
-      <div class="mt-16 max-w-4xl mx-auto">
-        <h2
-          class="text-2xl md:text-3xl lg:text-4xl font-black mb-8 text-fixter-primary"
-        >
-          ¿Por qué Phi-4 es la elección inteligente?
-        </h2>
-        <div
-          class="bg-white border-4 border-fixter-primary shadow-neo p-8 lg:p-10 rounded-lg"
-        >
-          <p
-            class="text-base md:text-lg lg:text-xl text-fixter-primary leading-relaxed mb-6"
-          >
-            Implementar Phi-4 en tu empresa no es solo una decisión tecnológica,
-            es
-            <span
-              class="bg-[#85ddcb] text-black px-2 py-1 rounded font-semibold"
-              >una demostración de inteligencia empresarial</span
-            >. Mientras otros gastan fortunas en soluciones de IA que requieren
-            equipos de expertos y hardware especializado, tú obtienes
-            capacidades superiores a una fracción del costo.
-          </p>
-          <p
-            class="text-base md:text-lg lg:text-xl text-fixter-primary leading-relaxed mb-6"
-          >
-            Con Phi-4, consigues
-            <span
-              class="bg-[#85ddcb] text-black px-2 py-1 rounded font-semibold"
-              >automatización inteligente que aprende y mejora con el
-              tiempo</span
-            >, análisis de datos que revelan insights ocultos, y
-            <span
-              class="bg-[#85ddcb] text-black px-2 py-1 rounded font-semibold"
-              >una ventaja competitiva que tus competidores tardarán años en
-              alcanzar</span
-            >. Es como tener un equipo de genios trabajando 24/7, pero sin los
-            egos ni las demandas de aumento de sueldo.
-          </p>
-          <p
-            class="text-base md:text-lg lg:text-xl text-fixter-primary leading-relaxed"
-          >
-            <span
-              class="bg-[#85ddcb] text-black px-2 py-1 rounded font-semibold"
-              >Mientras la IA se vuelve más inteligente, tú te vuelves más
-              inteligente al usarla.</span
-            >
-            Es la única vez que puedes decir honestamente que "la máquina me
-            está haciendo más inteligente" sin sonar como si estuvieras en una
-            película de ciencia ficción 🤖. Phi-4 no solo resuelve problemas, te
-            ayuda a descubrir problemas que ni siquiera sabías que tenías.
-            <br /><span
-              class="bg-[#85ddcb] text-black px-3 py-2 rounded-lg font-bold text-lg"
-              >¡Eso sí que es inteligencia artificial!</span
-            >
-          </p>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="mt-12 text-fixter-secondary">
-        <p class="text-base lg:text-lg font-semibold">
-          Desarrollado por Fixter.org
-        </p>
-        <p class="text-xs lg:text-sm">
-          © 2024 Phi-4. Todos los derechos reservados.
-        </p>
-      </div>
-    </div>
+        // Fallback: si algún componente falla, mostrar contenido estático
+        window.addEventListener("error", (e) => {
+          if (
+            e.target.tagName === "SCRIPT" &&
+            e.target.src.includes("components.js")
+          ) {
+            console.error(
+              "❌ Error cargando sistema de componentes, usando fallback..."
+            );
+            // Aquí podrías cargar una versión estática de la página
+          }
+        });
+      </script>
+    </main>
+    <!-- Footer Component -->
+    <div id="footer-container" class="component-fade-in"></div>
   </body>
 </html>
